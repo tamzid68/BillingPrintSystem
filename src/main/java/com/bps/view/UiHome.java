@@ -197,7 +197,15 @@ public void addTable(String Name,double Price){
             new String [] {
                 "Iteam", "Qty", "Price"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jScrollPane2.setViewportView(jTextPane1);
